@@ -1,0 +1,11 @@
+import cv2 
+import numpy as np
+kernel=np.ones((5,5),np.int8)
+print(kernel)
+image_path="C:/Users/91956/Downloads/puppy"
+image=cv2.imread(image_path)
+gray_image=cv2.cvtColor(image,cv2.COLOR_BRG2GRAY)
+imageBlur=cv2.GuassianBlur(gray_image,(7,7),0)
+imageCanny=cv2.canny(imageblur,100,200)
+cv2.show("img canny",imagecanny)
+cv2.waitkey(0)
